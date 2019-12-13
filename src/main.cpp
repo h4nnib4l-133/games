@@ -1,25 +1,13 @@
-#include<iostream>
-#include<ncurses.h>
-#include<string>
-
+#include <cstdint>
+#include "game.h" 
 
 int main(int argv, char** argc){
-	
-	move(5,5);
+	int init_status = init();
 
-	std::string text = "Hello World!!";
-	initscr();
-	cbreak();
-	noecho();
-	clear();
-
-	for(int i = 0; i < text.size(); ++i){
-		addch(text[i]);
-		addch(' ');
+	if(init_status == 0){
+		run();
 	}
-	
-	refresh();
-	while(1);
-	
-	return 0;
-}
+
+	close();
+	return 0;	
+}	
