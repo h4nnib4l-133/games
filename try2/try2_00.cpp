@@ -14,6 +14,7 @@ void erase(int row, int col){
 	mvaddch(row, col, '#');
 }
 
+
 void game_loop(int row, int col, char main_char, int ch){
 
 	if(ch == 'q' || ch == 'Q' ) return;
